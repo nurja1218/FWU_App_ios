@@ -6,14 +6,7 @@ target 'PeroDFU' do
   use_frameworks!
 
   # Pods for PeroDFU
-
-  target 'PeroDFUTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'PeroDFUUITests' do
-    # Pods for testing
-  end
+  pod 'iOSDFULibrary'
+  
 
 end
