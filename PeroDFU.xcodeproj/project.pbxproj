@@ -155,7 +155,6 @@
 				BC5C3CB36D14D6BB6BFE1FA9 /* Pods-PeroDFUTests.debug.xcconfig */,
 				6CAC2F9D327C177C024BC48B /* Pods-PeroDFUTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -557,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodru.PeroDFU;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -577,7 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodru.PeroDFU;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
