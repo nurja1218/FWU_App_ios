@@ -68,8 +68,9 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
     @IBOutlet weak var progressView:SFCircleGradientView!
     @IBOutlet weak var top:NSLayoutConstraint!
   
-    
-    
+    var firwareName:String = ""
+    var deviceName:String = ""
+ 
     var firmware:DFUFirmware!
     var selectedPeriperal:CBPeripheral!
     
@@ -77,6 +78,7 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
     var bCompleted:Bool = false
     
     var bToggle:Bool = false
+    var type:Int = 0
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,12 +88,23 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
         updateBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
         updateBt.layer.cornerRadius = 22
         updateBt.layer.masksToBounds = true
-        if(selectedPeriperal != nil)
+        if(type == 0)
         {
-            selectedDevice.text = selectedPeriperal.name
+            if(selectedPeriperal != nil)
+            {
+                selectedDevice.text = selectedPeriperal.name
+            }
+        
+            selectedFirmware.text = firmware.fileName
         }
-    
-        selectedFirmware.text = firmware.fileName
+        else
+        {
+            selectedFirmware.text = firwareName
+            selectedDevice.text = deviceName
+
+        }
+        
+     
         //fad336 start
         // ed1c24 end
     

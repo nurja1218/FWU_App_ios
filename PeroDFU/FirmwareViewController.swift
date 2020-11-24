@@ -7,6 +7,8 @@
 
 import UIKit
 import iOSDFULibrary
+import Alamofire
+import SwiftyJSON
 
 class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -22,6 +24,9 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
     var bClose:Bool = false
     
     var type :Int = 0
+    var selectedFirmware:String = ""
+    var selectedDevice:String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +49,54 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
             getInbox()
 
         }
+        else
+        {
+            downloadList()
+
+        }
      
+    }
+    func downloadList()
+    {
+        let url = "http://www.junsoft.org/firmware/firmwares.json"
+    
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json"
+        ]
+
+       
+        AF.request(url, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers)
+        .responseJSON {  [self] response in
+            
+            switch response.result {
+
+            case .success(let value):
+                let json = JSON(value)
+                let items =  json["item"].arrayValue
+                for item in items{
+                   let name =  item["name"].stringValue
+                    print(name)
+                    let path = "http://www.junsoft.org/firmware/" + name
+                    let pathUrl = URL(string: path)
+                    self.firmwares.append(pathUrl!)
+                    
+                  
+                }
+                collectionView.reloadData()
+         
+               // completion(true, json)
+                
+
+            case .failure(let error):
+            
+                print("error : \(error)")
+                //completion(false, JSON())
+                
+                break;
+                
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         bTouchEnable = true
@@ -136,26 +188,134 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
        // centralManager.stopScan()
         let url = firmwares[indexPath.row]
     
-        let firmeware = DFUFirmware(urlToZipFile:  url)
-     
-   
-        performSegue(withIdentifier: "exec_update", sender: firmeware)
+        if(type == 0)
+        {
+            let firmeware = DFUFirmware(urlToZipFile:  url)
+         
+       
+            performSegue(withIdentifier: "exec_update", sender: firmeware)
+        }
+        else
+        {
+           // let firmeware = DFUFirmware(urlToZipFile:  url)
+         
+            let name =  url.lastPathComponent
+            let urlStr = "http://www.junsoft.org/firmware/" + name
+           
+            downloadFirmware(filename: name, url: URL(string: urlStr)!)
+       
+            //performSegue(withIdentifier: "exec_update", sender: firmeware)
+        }
+ 
      //   dismiss(animated: true, completion: nil)
       
 
+    }
+    func documentsDirectoryURL() -> NSURL {
+          let manager = FileManager.default
+          let URLs = manager.urls(for: .documentDirectory, in: .userDomainMask)
+          return URLs[0] as NSURL
+      }
+    func dataFileURL(fileName:String) -> NSURL {
+          
+          let path = String(format: "%@", fileName)
+          let targetPath = documentsDirectoryURL()
+          
+          let manager = FileManager.default
+        
+          
+          if(manager.fileExists(atPath: targetPath.path!))
+          {
+              print("exist")
+          }
+          else
+          {
+              do{
+                  try   manager.createDirectory(at: targetPath as URL, withIntermediateDirectories: false, attributes: nil)
+                  
+              } catch {
+                  print("Error: \(error.localizedDescription)")
+              }
+          }
+          
+          
+          
+          return documentsDirectoryURL().appendingPathComponent(path)! as NSURL
+          
+      }
+    func downloadFirmware(filename:String, url:URL)
+    {
+        let manager = FileManager.default
+               
+        let path = String(format: "%@", filename)
+        let pathUrl = dataFileURL(fileName: filename)
+
+        let destination: DownloadRequest.Destination = { _, _ in
+                          
+                              var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                              documentsURL.appendPathComponent(path)
+                              return (documentsURL, [.removePreviousFile])
+               }
+        
+        AF.download(url,to:destination).responseData { (_data) in
+            if(_data.error == nil)
+            {
+                let data = manager.contents(atPath: pathUrl.path!)
+                             
+                let firmeware = DFUFirmware(zipFile:data!)
+              
+            
+                self.selectedFirmware = filename
+                self.performSegue(withIdentifier: "exec_update", sender: firmeware)
+      
+                
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "exec_update"{
           
-            let firmware = sender as! DFUFirmware
+            var firmware:DFUFirmware!
+         
             if let detail = segue.destination as? UpdateViewController{
+                if(sender != nil)
+                {
+                    firmware   = sender as! DFUFirmware
+              
+                }
                 detail.hero.isEnabled = true
                 detail.hero.modalAnimationType = .fade//.push(direction: .left)
-                detail.firmware = firmware
-                detail.selectedPeriperal = parentCon.selectedPeriperal
-                detail.parentCon = parentCon
+               
+                detail.type = type
+                if( type == 0)
+                {
+          
+                    if(firmware != nil)
+                    {
+                        detail.firmware = firmware
+                  
+                    }
+                    detail.selectedPeriperal = parentCon.selectedPeriperal
+                
+                }
+                else
+                {
+                    if(firmware != nil)
+                    {
+                        detail.firmware = firmware
+                  
+                    }
+                    detail.selectedPeriperal = parentCon.selectedPeriperal
+         
+                    detail.deviceName = parentCon.selectedPeriperal.name!
+                    detail.firwareName = selectedFirmware
+                   // detail.selectedDevice.text  = parentCon.selectedPeriperal.name
+                   // detail.selectedFirmware.text = self.selectedFirmware
+                    
+                }
+                 detail.parentCon = parentCon
 
                
             }

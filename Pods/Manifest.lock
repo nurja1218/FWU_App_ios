@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.2.2)
   - DTGradientButton (0.1.3)
   - Hero (1.5.0)
   - iOSDFULibrary (4.9.0):
@@ -19,17 +20,21 @@ PODS:
     - PINCache (~> 3.0.1)
     - PINRemoteImage/Core
   - SFProgressCircle (1.0.6)
+  - SwiftyJSON (5.0.0)
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
+  - Alamofire
   - DTGradientButton
   - Hero
   - iOSDFULibrary
   - PINRemoteImage
   - SFProgressCircle
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - DTGradientButton
     - Hero
     - iOSDFULibrary
@@ -37,9 +42,11 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - SFProgressCircle
+    - SwiftyJSON
     - ZIPFoundation
 
 SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   DTGradientButton: 6f0f696cd433255d226c05e4ab047d991d13d4ef
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   iOSDFULibrary: 4dc9e1b6ef296c5fbcdff8abca77b54397f10777
@@ -47,8 +54,9 @@ SPEC CHECKSUMS:
   PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
   PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
   SFProgressCircle: 645d71eb3ffc56939029afa074b5a38ed3cdfa21
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 0a31adfc78aed32ca2c45641a1e21023a5c1debd
+PODFILE CHECKSUM: fd1e8d6a882b8472a8355d231c6614dc5dbe00aa
 
 COCOAPODS: 1.9.1

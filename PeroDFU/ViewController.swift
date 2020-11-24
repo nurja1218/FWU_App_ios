@@ -37,6 +37,9 @@ class ViewController: UIViewController {
     
     var isLoop: Bool = true
     
+    var firmwareDict:NSDictionary?
+       
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,6 +78,7 @@ class ViewController: UIViewController {
 
   
     }
+    
     func configureUI()
     {
       
@@ -87,6 +91,8 @@ class ViewController: UIViewController {
         let offset = ( height - ( (120 + 40 ) * 2 + 40 + 44 + 36 + mHeight  )) / 4
         connectTop.constant = offset
         firmwareTop.constant = offset
+        
+       
    
     }
     override func viewWillAppear(_ animated: Bool) {
