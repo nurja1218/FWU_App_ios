@@ -7,6 +7,10 @@ target 'PeroDFU' do
 
   # Pods for PeroDFU
   pod 'iOSDFULibrary'
+  pod 'PINRemoteImage'
+  pod 'DTGradientButton'
+  pod 'SFProgressCircle'
+  pod 'Hero'
 
   target 'PeroDFUTests' do
     inherit! :search_paths

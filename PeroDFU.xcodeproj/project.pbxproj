@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0C31FE256CDFF7009FFEAB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C31FD256CDFF7009FFEAB /* UIColorExtension.swift */; };
+		1E0C3210256CE3C8009FFEAB /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C320F256CE3C8009FFEAB /* UpdateViewController.swift */; };
+		1E0C3223256CEBF3009FFEAB /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C3222256CEBF3009FFEAB /* ScanViewController.swift */; };
+		1E0C3228256CF1A6009FFEAB /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C3227256CF1A6009FFEAB /* DeviceCell.swift */; };
+		1E0C322D256D039A009FFEAB /* UIResponder+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C322C256D039A009FFEAB /* UIResponder+Scene.swift */; };
+		1E0C3232256D066C009FFEAB /* FirmwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C3231256D066C009FFEAB /* FirmwareViewController.swift */; };
 		1E8FDA0D256C7E6F00682D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8FDA0C256C7E6F00682D7F /* AppDelegate.swift */; };
 		1E8FDA0F256C7E6F00682D7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8FDA0E256C7E6F00682D7F /* SceneDelegate.swift */; };
 		1E8FDA11256C7E6F00682D7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8FDA10256C7E6F00682D7F /* ViewController.swift */; };
@@ -38,6 +44,13 @@
 /* Begin PBXFileReference section */
 		0D7FE591EC3FD32059676ED4 /* Pods_PeroDFU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeroDFU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		173C423ADE6E81A20D50BBF0 /* Pods-PeroDFU-PeroDFUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeroDFU-PeroDFUUITests.release.xcconfig"; path = "Target Support Files/Pods-PeroDFU-PeroDFUUITests/Pods-PeroDFU-PeroDFUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1E0C31AC256CAB70009FFEAB /* PeroDFU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeroDFU.entitlements; sourceTree = "<group>"; };
+		1E0C31FD256CDFF7009FFEAB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1E0C320F256CE3C8009FFEAB /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		1E0C3222256CEBF3009FFEAB /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		1E0C3227256CF1A6009FFEAB /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		1E0C322C256D039A009FFEAB /* UIResponder+Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Scene.swift"; sourceTree = "<group>"; };
+		1E0C3231256D066C009FFEAB /* FirmwareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareViewController.swift; sourceTree = "<group>"; };
 		1E8FDA09256C7E6F00682D7F /* PeroDFU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeroDFU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8FDA0C256C7E6F00682D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E8FDA0E256C7E6F00682D7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,9 +121,16 @@
 		1E8FDA0B256C7E6F00682D7F /* PeroDFU */ = {
 			isa = PBXGroup;
 			children = (
+				1E0C31AC256CAB70009FFEAB /* PeroDFU.entitlements */,
 				1E8FDA0C256C7E6F00682D7F /* AppDelegate.swift */,
 				1E8FDA0E256C7E6F00682D7F /* SceneDelegate.swift */,
 				1E8FDA10256C7E6F00682D7F /* ViewController.swift */,
+				1E0C322C256D039A009FFEAB /* UIResponder+Scene.swift */,
+				1E0C320F256CE3C8009FFEAB /* UpdateViewController.swift */,
+				1E0C3231256D066C009FFEAB /* FirmwareViewController.swift */,
+				1E0C3222256CEBF3009FFEAB /* ScanViewController.swift */,
+				1E0C31FD256CDFF7009FFEAB /* UIColorExtension.swift */,
+				1E0C3227256CF1A6009FFEAB /* DeviceCell.swift */,
 				1E8FDA12256C7E6F00682D7F /* Main.storyboard */,
 				1E8FDA15256C7E7400682D7F /* Assets.xcassets */,
 				1E8FDA17256C7E7400682D7F /* LaunchScreen.storyboard */,
@@ -129,7 +149,6 @@
 				2CE5A2C4DECF174DDFA45859 /* Pods-PeroDFUTests.debug.xcconfig */,
 				DE09FFABE88D4FBB34999768 /* Pods-PeroDFUTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -384,6 +403,12 @@
 				1E8FDA11256C7E6F00682D7F /* ViewController.swift in Sources */,
 				1E8FDA0D256C7E6F00682D7F /* AppDelegate.swift in Sources */,
 				1E8FDA0F256C7E6F00682D7F /* SceneDelegate.swift in Sources */,
+				1E0C322D256D039A009FFEAB /* UIResponder+Scene.swift in Sources */,
+				1E0C3228256CF1A6009FFEAB /* DeviceCell.swift in Sources */,
+				1E0C31FE256CDFF7009FFEAB /* UIColorExtension.swift in Sources */,
+				1E0C3210256CE3C8009FFEAB /* UpdateViewController.swift in Sources */,
+				1E0C3232256D066C009FFEAB /* FirmwareViewController.swift in Sources */,
+				1E0C3223256CEBF3009FFEAB /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,15 +583,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = PeroDFU/PeroDFU.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48RJ83RM5;
 				INFOPLIST_FILE = PeroDFU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodru;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = PeroDFU_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -578,15 +606,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = PeroDFU/PeroDFU.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48RJ83RM5;
 				INFOPLIST_FILE = PeroDFU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodru;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsoft.perodfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = PeroDFU_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,20 +1,54 @@
 PODS:
+  - DTGradientButton (0.1.3)
+  - Hero (1.5.0)
   - iOSDFULibrary (4.9.0):
     - ZIPFoundation (= 0.9.11)
+  - PINCache (3.0.1):
+    - PINCache/Arc-exception-safe (= 3.0.1)
+    - PINCache/Core (= 3.0.1)
+  - PINCache/Arc-exception-safe (3.0.1):
+    - PINCache/Core
+  - PINCache/Core (3.0.1):
+    - PINOperation (~> 1.2.0)
+  - PINOperation (1.2)
+  - PINRemoteImage (3.0.1):
+    - PINRemoteImage/PINCache (= 3.0.1)
+  - PINRemoteImage/Core (3.0.1):
+    - PINOperation
+  - PINRemoteImage/PINCache (3.0.1):
+    - PINCache (~> 3.0.1)
+    - PINRemoteImage/Core
+  - SFProgressCircle (1.0.6)
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
+  - DTGradientButton
+  - Hero
   - iOSDFULibrary
+  - PINRemoteImage
+  - SFProgressCircle
 
 SPEC REPOS:
   trunk:
+    - DTGradientButton
+    - Hero
     - iOSDFULibrary
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - SFProgressCircle
     - ZIPFoundation
 
 SPEC CHECKSUMS:
+  DTGradientButton: 6f0f696cd433255d226c05e4ab047d991d13d4ef
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   iOSDFULibrary: 4dc9e1b6ef296c5fbcdff8abca77b54397f10777
+  PINCache: ee3c4abadd09970a61cdda0cfc345e69a3d75b26
+  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
+  PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
+  SFProgressCircle: 645d71eb3ffc56939029afa074b5a38ed3cdfa21
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 0f950159aa4112f77a6bdbdca39b6060b6a961c4
+PODFILE CHECKSUM: c68cfa831bf1c91d983c3295f9f456ac8922e135
 
 COCOAPODS: 1.9.1

@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,15 +14,64 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pero-logo" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-c0-5ni">
+                                <rect key="frame" x="107" y="323" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HP7-42-uk2"/>
+                                    <constraint firstAttribute="width" constant="200" id="Q06-qo-AQE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pero-fu" translatesAutoresizingMaskIntoConstraints="NO" id="pIQ-rr-Qcu">
+                                <rect key="frame" x="106.5" y="435" width="201" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="hfP-Qg-gK4"/>
+                                    <constraint firstAttribute="height" constant="60" id="zPd-DA-9UI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firmware-upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-Fw-Mr2">
+                                <rect key="frame" x="229" y="495" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="59g-u7-svD"/>
+                                    <constraint firstAttribute="height" constant="30" id="k7F-Me-YyS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palmcat-logo" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-v5-6Iw">
+                                <rect key="frame" x="100" y="818" width="214" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="2RC-1O-PbN"/>
+                                    <constraint firstAttribute="height" constant="24" id="gmv-3Q-5Fq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iSh-Fw-Mr2" secondAttribute="trailing" constant="120" id="0Py-ex-pOO"/>
+                            <constraint firstItem="7QA-c0-5ni" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7kt-BX-fts"/>
+                            <constraint firstItem="7QA-c0-5ni" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-80" id="EQH-BN-7EL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kSg-v5-6Iw" secondAttribute="bottom" constant="20" id="YIs-IS-txH"/>
+                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lm5-uC-kCx"/>
+                            <constraint firstItem="iSh-Fw-Mr2" firstAttribute="top" secondItem="pIQ-rr-Qcu" secondAttribute="bottom" id="rlO-8Q-e3Z"/>
+                            <constraint firstItem="kSg-v5-6Iw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rlW-js-p7V"/>
+                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="top" secondItem="7QA-c0-5ni" secondAttribute="bottom" constant="12" id="sHc-bL-NAK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Firmware-upgrade" width="167" height="82"/>
+        <image name="palmcat-logo" width="238.5" height="72.5"/>
+        <image name="pero-fu" width="484.5" height="193.5"/>
+        <image name="pero-logo" width="608.5" height="298"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
