@@ -17,6 +17,10 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
     var firmwares:[URL] = []
 
     var parentCon:ViewController!
+    
+    var bTouchEnable:Bool = false
+    var bClose:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,9 +40,27 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
         getInbox()
      
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        bTouchEnable = true
+     
+    }
+    override func viewDidLayoutSubviews() {
+        if(bClose == true)
+        {
+            bClose = false
+            self.hero_unwindToRootViewController()
+            
+        }
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        bTouchEnable = false
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dismiss(animated: true, completion: nil)
+        if(bTouchEnable == true)
+        {
+            dismiss(animated: true, completion: nil)
+     
+        }
     }
 
 
@@ -127,8 +149,9 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
                 detail.hero.modalAnimationType = .fade//.push(direction: .left)
                 detail.firmware = firmware
                 detail.selectedPeriperal = parentCon.selectedPeriperal
+                detail.parentCon = self
 
-   
+               
             }
            
         }

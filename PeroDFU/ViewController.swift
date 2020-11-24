@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var updateServerBt:UIButton!
     @IBOutlet weak var localBt:UIButton!
     @IBOutlet weak var deviceName:UILabel!
-    
+   
     var selectedPeriperal:CBPeripheral!
     
     
@@ -41,14 +41,12 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
       //  getFirmwrae()
-        let delegate = self.view.window!.windowScene!.delegate as? SceneDelegate
+      //  let delegate = self.view.window!.windowScene!.delegate as? SceneDelegate
       
-        delegate!.main = self
+        //delegate!.main = self
    
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+   
     func getFirmwrae(firmeware:DFUFirmware!)
     {
        
