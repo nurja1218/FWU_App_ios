@@ -10,6 +10,7 @@ import DTGradientButton
 import Hero
 import CoreBluetooth
 import iOSDFULibrary
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -17,9 +18,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var updateServerBt:UIButton!
     @IBOutlet weak var localBt:UIButton!
     @IBOutlet weak var deviceName:UILabel!
+    @IBOutlet weak var videoView:UIImageView!
+    @IBOutlet weak var top:NSLayoutConstraint!
+
+    @IBOutlet weak var scanHeight:NSLayoutConstraint!
+    @IBOutlet weak var localHeight:NSLayoutConstraint!
+    @IBOutlet weak var serverHeight:NSLayoutConstraint!
    
+    @IBOutlet weak var connectTop:NSLayoutConstraint!
+    @IBOutlet weak var firmwareTop:NSLayoutConstraint!
+
+    
     var selectedPeriperal:CBPeripheral!
     
+    var playerLayer: AVPlayerLayer?
+    
+    var player: AVPlayer?
+    
+    var isLoop: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +53,84 @@ class ViewController: UIViewController {
         localBt.layer.cornerRadius = 22
         localBt.layer.masksToBounds = true
         
+        
+      //  let playerView = VideoPlayerView()
+       // let url = URL(fileURLWithPath: <#T##String#>)
+        
+
+      //  playerView.play(for: url)
+   //     videoView.addSubview(playerView)
+        let urlPath = Bundle.main.path(forResource: "demo", ofType:  "mp4")
+   
+        let url =  URL(fileURLWithPath: urlPath!)
+        
+        player = AVPlayer(url: url)
+        playerLayer = AVPlayerLayer(player: player)
+                  
+        playerLayer?.frame = videoView.bounds
+        playerLayer?.videoGravity = .resizeAspectFill
+        
+        videoView.layer.addSublayer(playerLayer!)
+        NotificationCenter.default.addObserver(self, selector: #selector(reachTheEndOfTheVideo(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
+
   
+    }
+    func configureUI()
+    {
+      
+        let height = UIScreen.main.bounds.size.height
+        let width = UIScreen.main.bounds.size.width
+        
+        let mHeight =  width * 9 / 16
+         
+  
+        let offset = ( height - ( (120 + 40 ) * 2 + 40 + 44 + 36 + mHeight  )) / 4
+        connectTop.constant = offset
+        firmwareTop.constant = offset
+   
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       // let url = URL(string: urlPath!)
+           
+        if UIScreen.main.bounds.size.height <= 568
+        {
+            top.constant = 0
+            scanHeight.constant = 30
+            serverHeight.constant = 30
+            localHeight.constant = 30
+        }
+        playerLayer?.frame = videoView.bounds
+   
+        
+        if player?.timeControlStatus != AVPlayer.TimeControlStatus.playing {
+        
+            player?.play()
+            
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if player?.timeControlStatus == AVPlayer.TimeControlStatus.playing {
+        
+            player?.pause()
+            
+        }
+    }
+    @objc func reachTheEndOfTheVideo(_ notification: Notification) {
+            if isLoop {
+                player?.pause()
+                player?.seek(to: .zero)
+                player?.play()
+            }
+      
     }
     override func viewDidAppear(_ animated: Bool) {
       //  getFirmwrae()
       //  let delegate = self.view.window!.windowScene!.delegate as? SceneDelegate
       
         //delegate!.main = self
+        playerLayer?.frame = videoView.bounds
+        configureUI()
    
     }
    
@@ -68,10 +155,14 @@ class ViewController: UIViewController {
     }
     @IBAction func loadLocalFirmware()
     {
-        performSegue(withIdentifier: "exec_firmware", sender: nil)
+        performSegue(withIdentifier: "exec_firmware", sender: 0)
 
     }
-    
+    @IBAction func loadServerFirmware()
+    {
+        performSegue(withIdentifier: "exec_firmware", sender: 1)
+
+    }
     
     @IBAction func test()
     {
@@ -104,11 +195,13 @@ class ViewController: UIViewController {
         }
         if segue.identifier == "exec_firmware"{
           
+            let type = sender as! Int
             if let detail = segue.destination as? FirmwareViewController{
                 detail.modalPresentationStyle = .overCurrentContext
                 detail.hero.isEnabled = true
                 detail.hero.modalAnimationType = .fade
                 detail.parentCon = self
+                detail.type = type
     
    
             }

@@ -21,6 +21,8 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
     var bTouchEnable:Bool = false
     var bClose:Bool = false
     
+    var type :Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,8 +38,12 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
        
        layout.itemSize = CGSize(width: width - 40 ,height: 30)
        self.collectionView.setCollectionViewLayout(layout, animated: true)
-               
-        getInbox()
+             
+        if(type == 0)
+        {
+            getInbox()
+
+        }
      
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -149,7 +155,7 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
                 detail.hero.modalAnimationType = .fade//.push(direction: .left)
                 detail.firmware = firmware
                 detail.selectedPeriperal = parentCon.selectedPeriperal
-                detail.parentCon = self
+                detail.parentCon = parentCon
 
                
             }

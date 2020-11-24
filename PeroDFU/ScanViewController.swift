@@ -48,12 +48,14 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, UICollecti
         collectionView.reloadData()
         
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         centralManager.delegate = self
         if centralManager.state == .poweredOn {
             startDiscovery()
         }
     }
+    
     func startDiscovery() {
         if !scanningStarted {
             scanningStarted = true
@@ -92,6 +94,7 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, UICollecti
     
     override func viewDidDisappear(_ animated: Bool) {
         centralManager.stopScan()
+        discoveredPeripherals.removeAll()
    
     }
     

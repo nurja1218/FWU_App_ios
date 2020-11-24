@@ -11,7 +11,7 @@ target 'PeroDFU' do
   pod 'DTGradientButton'
   pod 'SFProgressCircle'
   pod 'Hero'
-
+  
   target 'PeroDFUTests' do
     inherit! :search_paths
     # Pods for testing
