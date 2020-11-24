@@ -307,10 +307,17 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
                         detail.firmware = firmware
                   
                     }
-                    detail.selectedPeriperal = parentCon.selectedPeriperal
-         
-                    detail.deviceName = parentCon.selectedPeriperal.name!
-                    detail.firwareName = selectedFirmware
+                
+                    if(parentCon.selectedPeriperal != nil)
+                    {
+                        detail.selectedPeriperal = parentCon.selectedPeriperal
+             
+                        detail.deviceName = parentCon.selectedPeriperal.name!
+           
+                 
+                    }
+                 
+                     detail.firwareName = selectedFirmware
                    // detail.selectedDevice.text  = parentCon.selectedPeriperal.name
                    // detail.selectedFirmware.text = self.selectedFirmware
                     
