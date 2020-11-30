@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     var isLoop: Bool = true
     
     var firmwareDict:NSDictionary?
+    
+    var cornerRadius:CGFloat = 22
        
     
     override func viewDidLoad() {
@@ -45,15 +47,15 @@ class ViewController: UIViewController {
         
          let colors = [UIColor(hex: "e8963d"), UIColor(hex: "c1315a")]
         scanBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
-        scanBt.layer.cornerRadius = 22
+        scanBt.layer.cornerRadius = cornerRadius
         scanBt.layer.masksToBounds = true
      
         updateServerBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
-        updateServerBt.layer.cornerRadius = 22
+        updateServerBt.layer.cornerRadius = cornerRadius
         updateServerBt.layer.masksToBounds = true
   
         localBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
-        localBt.layer.cornerRadius = 22
+        localBt.layer.cornerRadius = cornerRadius
         localBt.layer.masksToBounds = true
         
         
@@ -104,6 +106,13 @@ class ViewController: UIViewController {
             scanHeight.constant = 30
             serverHeight.constant = 30
             localHeight.constant = 30
+            
+            cornerRadius = 15
+            scanBt.layer.cornerRadius = cornerRadius
+         
+            updateServerBt.layer.cornerRadius = cornerRadius
+     
+            localBt.layer.cornerRadius = cornerRadius
         }
         playerLayer?.frame = videoView.bounds
    
@@ -114,6 +123,7 @@ class ViewController: UIViewController {
             
         }
     }
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         if player?.timeControlStatus == AVPlayer.TimeControlStatus.playing {
@@ -137,6 +147,14 @@ class ViewController: UIViewController {
         //delegate!.main = self
         playerLayer?.frame = videoView.bounds
         configureUI()
+        
+        if UIScreen.main.bounds.size.height <= 568
+        {
+            top.constant = 20
+            scanHeight.constant = 30
+            serverHeight.constant = 30
+            localHeight.constant = 30
+        }
    
     }
    

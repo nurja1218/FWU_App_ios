@@ -40,7 +40,7 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
             bCompleted = true
             let colors = [UIColor(hex: "fad336"), UIColor(hex: "ed1c24")]
             updateBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
-            updateBt.layer.cornerRadius = 22
+            updateBt.layer.cornerRadius = cornerRadius
             updateBt.layer.masksToBounds = true
             
             backBt.isHidden = false
@@ -79,6 +79,8 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
     
     var bToggle:Bool = false
     var type:Int = 0
+    
+    var cornerRadius:CGFloat = 22
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +88,7 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
        
         let colors = [UIColor(hex: "fad336"), UIColor(hex: "ed1c24")]
         updateBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
-        updateBt.layer.cornerRadius = 22
+        updateBt.layer.cornerRadius = cornerRadius
         updateBt.layer.masksToBounds = true
         if(type == 0)
         {
@@ -111,12 +113,100 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
     }
     override func viewWillAppear(_ animated: Bool) {
         
-        if UIScreen.main.bounds.size.height <= 568
-        {
-            top.constant = 0
-        }
+    
     }
     override func viewDidAppear(_ animated: Bool) {
+        
+        let height = UIScreen.main.bounds.size.height
+        // height  375 x 812 -> iPhone XS
+        // height  414 x 896 -> iPhone XR, iPhone XS Max
+        // height  414 x 896 -> iPhone XR
+        // height  414 x 736 -> iPhone 6/7/8 plus
+        // height  320 x 568 -> iPhone SE/5
+   
+        // 896 -> XR
+        if height <= 568
+        {
+            top.constant = 20
+            updateBt.layer.cornerRadius = cornerRadius
+        }
+        if(height == 568)
+        {
+            progressView.lineWidth = 9 //  x 568
+      
+        }
+        if(height == 667)
+        {
+            progressView.lineWidth = 11 //  x 667
+       
+        }
+        if(height == 736)
+        {
+            progressView.lineWidth = 13 //  x 736
+       
+        }
+ 
+        if(height == 812)
+        {
+            progressView.lineWidth = 11 //  x 812
+      
+        }
+        if(height == 844)
+        {
+            progressView.lineWidth = 12 //  x 844
+      
+        }
+ 
+        if(height == 896)
+        {
+            progressView.lineWidth = 13 //  x 896
+     
+        }
+        
+        if(height == 926)
+        {
+            progressView.lineWidth = 14 // x 926
+       
+        }
+       
+        if(height == 1366)
+        {
+            progressView.lineWidth = 42 //  x 1366 iPad Pro 12.9
+      
+        }
+        if(height == 1180)
+        {
+            progressView.lineWidth = 32 //  x 1194 iPad Pro 11
+
+        }
+        if(height == 1194)
+        {
+            progressView.lineWidth = 34 //  x 1194 iPad Pro 11
+
+        }
+        if(height == 1122)
+        {
+            progressView.lineWidth = 34 //  x 1122 iPad Pro 10.5
+       
+        }
+        if(height == 1080)
+        {
+            progressView.lineWidth = 32 //  x 1080 iPad 8
+     
+        }
+        if(height == 1024)
+        {
+            progressView.lineWidth = 30 //  x 1024 iPad Pro 9.7
+      
+        }
+     
+       
+   
+     
+   
+   
+    
+        print(height)
    }
     @IBAction func close()
     {
@@ -166,11 +256,11 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
         
             //
         
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                                                 
                 let colors = [UIColor(hex: "b3b3b3"), UIColor(hex: "b3b3b3")]
                 self.updateBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
-                self.updateBt.layer.cornerRadius = 22
+                self.updateBt.layer.cornerRadius = cornerRadius
                 self.updateBt.layer.masksToBounds = true
                 self.updateBt.setTitle("       updating...", for: .normal)
                // self.updateBt.isEnabled = false
