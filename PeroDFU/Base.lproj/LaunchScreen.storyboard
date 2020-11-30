@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -14,26 +14,26 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-u4-h4a" userLabel="Center">
-                                <rect key="frame" x="238" y="408" width="358" height="358"/>
+                                <rect key="frame" x="72.5" y="318.5" width="269" height="269"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pero-logo" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-c0-5ni">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="179"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="134.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1h-0V-3K6" userLabel="SubView">
-                                        <rect key="frame" x="0.0" y="199" width="358" height="143.5"/>
+                                        <rect key="frame" x="0.0" y="154.5" width="269" height="107.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pero-fu" translatesAutoresizingMaskIntoConstraints="NO" id="pIQ-rr-Qcu">
-                                                <rect key="frame" x="35.5" y="0.0" width="287" height="89.5"/>
+                                                <rect key="frame" x="27" y="0.0" width="215" height="67"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a2-2d-pCj" userLabel="FWView">
-                                                <rect key="frame" x="36" y="89.5" width="286" height="44"/>
+                                                <rect key="frame" x="27" y="67" width="215" height="33.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firmware-upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-Fw-Mr2">
-                                                        <rect key="frame" x="191.5" y="0.0" width="94.5" height="44"/>
+                                                        <rect key="frame" x="144" y="0.0" width="71" height="33.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,7 +47,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="7a2-2d-pCj" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.306502" id="5oV-fE-XEf"/>
+                                            <constraint firstItem="7a2-2d-pCj" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.31" id="5oV-fE-XEf"/>
                                             <constraint firstItem="7a2-2d-pCj" firstAttribute="width" secondItem="pIQ-rr-Qcu" secondAttribute="width" multiplier="0.998452" id="BZ4-fv-jWW"/>
                                             <constraint firstItem="pIQ-rr-Qcu" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.625387" id="BrQ-Ip-gPg"/>
                                             <constraint firstItem="7a2-2d-pCj" firstAttribute="centerX" secondItem="s1h-0V-3K6" secondAttribute="centerX" id="I4I-g4-naZ"/>
@@ -73,7 +73,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palmcat-logo" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-v5-6Iw">
-                                <rect key="frame" x="310" y="1130" width="214" height="24"/>
+                                <rect key="frame" x="100" y="818" width="214" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="214" id="2RC-1O-PbN"/>
                                     <constraint firstAttribute="height" constant="24" id="gmv-3Q-5Fq"/>

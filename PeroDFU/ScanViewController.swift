@@ -24,18 +24,7 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, UICollecti
         super.viewDidLoad()
 
         
-        let layout = UICollectionViewFlowLayout()
-            
-
-       layout.scrollDirection = .vertical
-       
-    //   layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-       
-       let width = UIScreen.main.bounds.size.width
-       
-       layout.itemSize = CGSize(width: width - 40 ,height: 30)
-       self.collectionView.setCollectionViewLayout(layout, animated: true)
-               
+          
         
         discoveredPeripherals = []
         centralManager = CBCentralManager(delegate: self, queue: nil) // The delegate must be set in init in order to
@@ -50,6 +39,18 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, UICollecti
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let layout = UICollectionViewFlowLayout()
+            
+
+       layout.scrollDirection = .vertical
+       
+       layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+       
+       let width = UIScreen.main.bounds.size.width
+       
+       layout.itemSize = CGSize(width: width - 40 ,height: 35)
+       self.collectionView.setCollectionViewLayout(layout, animated: false)
+     
         centralManager.delegate = self
         if centralManager.state == .poweredOn {
             startDiscovery()
@@ -112,7 +113,16 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, UICollecti
 
         let selectedPeripheral = discoveredPeripherals[indexPath.row]
    
-        cell.assign(peripheral: selectedPeripheral.peripheral, withName: selectedPeripheral.name)
+        if(selectedPeripheral.name != nil)
+        {
+            cell.assign(peripheral: selectedPeripheral.peripheral, withName: selectedPeripheral.name)
+       
+        }
+        else
+        {
+            cell.assign(peripheral: selectedPeripheral.peripheral, withName: "n/a")
+       
+        }
    
       
         //let name = array[indexPath.row] as! String
@@ -135,4 +145,18 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, UICollecti
 
     }
 
+}
+extension ScanViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       
+       
+ // 높이 구하기
+        let width = UIScreen.main.bounds.size.width
+        
+       
+          
+   
+        return  CGSize(width: width - 40 ,height: 35)
+        
+    }
 }

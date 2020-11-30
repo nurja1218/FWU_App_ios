@@ -31,8 +31,12 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
         print(totalProgress)
         if(totalProgress < 1)
         {
-            statusLabel.text = "updating"
-            updateBt.setTitle("       updating...", for: .normal)
+            let colors = [UIColor(hex: "b3b3b3"), UIColor(hex: "b3b3b3")]
+            updateBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
+            updateBt.layer.cornerRadius = cornerRadius
+            updateBt.layer.masksToBounds = true
+            statusLabel.text = "Updating"
+            updateBt.setTitle("       Updating...", for: .normal)
         
         }
         else
@@ -46,7 +50,7 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
             backBt.isHidden = false
             updateBt.isEnabled = true
         
-            statusLabel.text = "completed"
+            statusLabel.text = "Completed"
             updateBt.setTitle("       Done", for: .normal)
    
         
@@ -68,6 +72,11 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
     @IBOutlet weak var progressView:SFCircleGradientView!
     @IBOutlet weak var top:NSLayoutConstraint!
   
+    @IBOutlet weak var outer0:NSLayoutConstraint!
+    @IBOutlet weak var outer1:NSLayoutConstraint!
+    @IBOutlet weak var inner0:NSLayoutConstraint!
+    @IBOutlet weak var inner1:NSLayoutConstraint!
+ 
     var firwareName:String = ""
     var deviceName:String = ""
  
@@ -125,6 +134,19 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
         // height  320 x 568 -> iPhone SE/5
    
         // 896 -> XR
+        
+       
+        outer0.constant = 48
+        outer1.constant = 48
+
+        inner0.constant = 46
+        inner1.constant = 46
+
+       
+        let fontSize = progressView.frame.size.height / 4
+        
+        percentLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: fontSize)
+        
         if height <= 568
         {
             top.constant = 20
@@ -132,71 +154,71 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
         }
         if(height == 568)
         {
-            progressView.lineWidth = 9 //  x 568
+            progressView.lineWidth = 18//  x 568
       
         }
         if(height == 667)
         {
-            progressView.lineWidth = 11 //  x 667
+            progressView.lineWidth = 23//  x 667
        
         }
         if(height == 736)
         {
-            progressView.lineWidth = 13 //  x 736
+            progressView.lineWidth = 26 //  x 736
        
         }
  
         if(height == 812)
         {
-            progressView.lineWidth = 11 //  x 812
+            progressView.lineWidth = 24 //  x 812
       
         }
         if(height == 844)
         {
-            progressView.lineWidth = 12 //  x 844
+            progressView.lineWidth = 24//  x 844
       
         }
  
         if(height == 896)
         {
-            progressView.lineWidth = 13 //  x 896
+            progressView.lineWidth = 27 //  x 896
      
         }
         
         if(height == 926)
         {
-            progressView.lineWidth = 14 // x 926
+            progressView.lineWidth = 28// x 926
        
         }
        
         if(height == 1366)
         {
-            progressView.lineWidth = 42 //  x 1366 iPad Pro 12.9
+            progressView.lineWidth = 81//  x 1366 iPad Pro 12.9
       
         }
         if(height == 1180)
         {
-            progressView.lineWidth = 32 //  x 1194 iPad Pro 11
+            progressView.lineWidth = 64 //  x 1194 iPad Pro 11
 
         }
         if(height == 1194)
         {
-            progressView.lineWidth = 34 //  x 1194 iPad Pro 11
+            progressView.lineWidth = 65//  x 1194 iPad Pro 11
 
         }
         if(height == 1122)
         {
-            progressView.lineWidth = 34 //  x 1122 iPad Pro 10.5
+            progressView.lineWidth = 65//  x 1122 iPad Pro 10.5
        
         }
         if(height == 1080)
         {
-            progressView.lineWidth = 32 //  x 1080 iPad 8
+            progressView.lineWidth = 63 //  x 1080 iPad 8
      
         }
         if(height == 1024)
         {
-            progressView.lineWidth = 30 //  x 1024 iPad Pro 9.7
+            progressView.lineWidth = 59 //  x 1024 iPad Pro 9.7
       
         }
      
@@ -262,7 +284,7 @@ class UpdateViewController: UIViewController, DFUServiceDelegate, DFUProgressDel
                 self.updateBt.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
                 self.updateBt.layer.cornerRadius = cornerRadius
                 self.updateBt.layer.masksToBounds = true
-                self.updateBt.setTitle("       updating...", for: .normal)
+                self.updateBt.setTitle("       Updating...", for: .normal)
                // self.updateBt.isEnabled = false
 
       

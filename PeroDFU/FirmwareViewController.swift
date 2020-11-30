@@ -100,6 +100,16 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     override func viewDidAppear(_ animated: Bool) {
         bTouchEnable = true
+        let layout = UICollectionViewFlowLayout()
+    
+        layout.scrollDirection = .vertical
+        
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        let width = UIScreen.main.bounds.size.width
+        
+        layout.itemSize = CGSize(width: width - 40 ,height: 35)
+
      
     }
     override func viewDidLayoutSubviews() {
@@ -328,5 +338,21 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
             }
            
         }
+    }
+}
+
+
+extension FirmwareViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       
+       
+ // 높이 구하기
+        let width = UIScreen.main.bounds.size.width
+        
+       
+          
+   
+        return  CGSize(width: width - 40 ,height: 35)
+        
     }
 }

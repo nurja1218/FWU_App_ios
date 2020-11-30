@@ -17,6 +17,11 @@ class DeviceCell: UICollectionViewCell {
     
     func assign(peripheral: CBPeripheral, withName name: String?) {
         self.peripheral = peripheral
+        if(name == nil)
+        {
+        //    self.name = "n/a"
+        }
+        print(name)
         self.name = name
         
         nameLabel!.text = name
