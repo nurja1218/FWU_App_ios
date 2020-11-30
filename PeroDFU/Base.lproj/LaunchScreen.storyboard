@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -14,37 +14,47 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-u4-h4a" userLabel="Center">
-                                <rect key="frame" x="72.666666666666657" y="318.66666666666663" width="268.66666666666674" height="268.66666666666663"/>
+                                <rect key="frame" x="238" y="408" width="358" height="358"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pero-logo" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-c0-5ni">
-                                        <rect key="frame" x="0.0" y="0.0" width="268.66666666666669" height="134.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="179"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1h-0V-3K6" userLabel="SubView">
-                                        <rect key="frame" x="0.0" y="154.33333333333331" width="268.66666666666669" height="107.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="199" width="358" height="143.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pero-fu" translatesAutoresizingMaskIntoConstraints="NO" id="pIQ-rr-Qcu">
-                                                <rect key="frame" x="9.666666666666643" y="0.0" width="249.33333333333337" height="67.333333333333329"/>
+                                                <rect key="frame" x="35.5" y="0.0" width="287" height="89.5"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firmware-upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-Fw-Mr2">
-                                                <rect key="frame" x="180" y="62" width="88.666666666666686" height="41.666666666666657"/>
-                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a2-2d-pCj" userLabel="FWView">
+                                                <rect key="frame" x="36" y="89.5" width="286" height="44"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firmware-upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-Fw-Mr2">
+                                                        <rect key="frame" x="191.5" y="0.0" width="94.5" height="44"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="iSh-Fw-Mr2" secondAttribute="trailing" id="c0m-cN-ejB"/>
+                                                    <constraint firstItem="iSh-Fw-Mr2" firstAttribute="top" secondItem="7a2-2d-pCj" secondAttribute="top" id="dXr-9k-nIQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iSh-Fw-Mr2" secondAttribute="bottom" id="fC9-kk-uaK"/>
+                                                    <constraint firstItem="iSh-Fw-Mr2" firstAttribute="width" secondItem="7a2-2d-pCj" secondAttribute="width" multiplier="0.33" id="syO-UA-xl3"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="iSh-Fw-Mr2" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.385159" id="1Sa-mK-vIp"/>
-                                            <constraint firstAttribute="bottom" secondItem="iSh-Fw-Mr2" secondAttribute="bottom" constant="4" id="ATc-La-iG9"/>
-                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="centerX" secondItem="s1h-0V-3K6" secondAttribute="centerX" id="E9s-cf-ek7"/>
-                                            <constraint firstItem="iSh-Fw-Mr2" firstAttribute="width" secondItem="s1h-0V-3K6" secondAttribute="width" multiplier="0.33" id="ISn-eY-8eg"/>
-                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="top" secondItem="s1h-0V-3K6" secondAttribute="top" id="Ktq-oc-6ar"/>
-                                            <constraint firstAttribute="bottom" secondItem="iSh-Fw-Mr2" secondAttribute="bottom" constant="4" id="Mjk-6r-0M1"/>
-                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.625442" id="QQr-m1-s4K"/>
-                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="width" secondItem="s1h-0V-3K6" secondAttribute="width" multiplier="0.926554" id="VNJ-Pq-bJ2"/>
-                                            <constraint firstAttribute="trailing" secondItem="iSh-Fw-Mr2" secondAttribute="trailing" id="kea-5f-Hv7"/>
-                                            <constraint firstAttribute="trailing" secondItem="iSh-Fw-Mr2" secondAttribute="trailing" id="oGo-Ay-253"/>
+                                            <constraint firstItem="7a2-2d-pCj" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.306502" id="5oV-fE-XEf"/>
+                                            <constraint firstItem="7a2-2d-pCj" firstAttribute="width" secondItem="pIQ-rr-Qcu" secondAttribute="width" multiplier="0.998452" id="BZ4-fv-jWW"/>
+                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="height" secondItem="s1h-0V-3K6" secondAttribute="height" multiplier="0.625387" id="BrQ-Ip-gPg"/>
+                                            <constraint firstItem="7a2-2d-pCj" firstAttribute="centerX" secondItem="s1h-0V-3K6" secondAttribute="centerX" id="I4I-g4-naZ"/>
+                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="top" secondItem="s1h-0V-3K6" secondAttribute="top" id="IPn-RL-qFh"/>
+                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="width" secondItem="s1h-0V-3K6" secondAttribute="width" multiplier="0.8" id="M9P-wD-Jp9"/>
+                                            <constraint firstItem="7a2-2d-pCj" firstAttribute="top" secondItem="pIQ-rr-Qcu" secondAttribute="bottom" id="ReB-N1-4et"/>
+                                            <constraint firstItem="pIQ-rr-Qcu" firstAttribute="centerX" secondItem="s1h-0V-3K6" secondAttribute="centerX" id="pO2-H7-TRd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -63,7 +73,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palmcat-logo" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-v5-6Iw">
-                                <rect key="frame" x="100" y="818" width="214" height="24"/>
+                                <rect key="frame" x="310" y="1130" width="214" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="214" id="2RC-1O-PbN"/>
                                     <constraint firstAttribute="height" constant="24" id="gmv-3Q-5Fq"/>
@@ -83,14 +93,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51.219512195121951" y="374.23728813559325"/>
+            <point key="canvasLocation" x="50.724637681159422" y="373.66071428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="Firmware-upgrade" width="167" height="82"/>
-        <image name="palmcat-logo" width="238.33332824707031" height="72.666664123535156"/>
-        <image name="pero-fu" width="484.66665649414062" height="193.33332824707031"/>
-        <image name="pero-logo" width="608.66668701171875" height="297.66665649414062"/>
+        <image name="palmcat-logo" width="238.5" height="72.5"/>
+        <image name="pero-fu" width="484.5" height="193.5"/>
+        <image name="pero-logo" width="608.5" height="298"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
