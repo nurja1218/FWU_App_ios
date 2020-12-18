@@ -13,7 +13,8 @@ target 'PeroDFU' do
   pod 'Hero'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-
+  pod 'Siren'
+  
   target 'PeroDFUTests' do
     inherit! :search_paths
     # Pods for testing

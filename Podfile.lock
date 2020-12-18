@@ -20,6 +20,7 @@ PODS:
     - PINCache (~> 3.0.1)
     - PINRemoteImage/Core
   - SFProgressCircle (1.0.6)
+  - Siren (5.4.5)
   - SwiftyJSON (5.0.0)
   - ZIPFoundation (0.9.11)
 
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - iOSDFULibrary
   - PINRemoteImage
   - SFProgressCircle
+  - Siren
   - SwiftyJSON
 
 SPEC REPOS:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - SFProgressCircle
+    - Siren
     - SwiftyJSON
     - ZIPFoundation
 
@@ -54,9 +57,10 @@ SPEC CHECKSUMS:
   PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
   PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
   SFProgressCircle: 645d71eb3ffc56939029afa074b5a38ed3cdfa21
+  Siren: 4c6f4863ea5b7f2d0e58b576663fefd8f6ef417f
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: fd1e8d6a882b8472a8355d231c6614dc5dbe00aa
+PODFILE CHECKSUM: 17432d486104619ca580b1ac0c28d16e04811f55
 
 COCOAPODS: 1.9.1

@@ -67,9 +67,11 @@ class ViewController: UIViewController {
    //     videoView.addSubview(playerView)
         let urlPath = Bundle.main.path(forResource: "demo", ofType:  "mp4")
    
-        let url =  URL(fileURLWithPath: urlPath!)
-        
-        player = AVPlayer(url: url)
+        //http://www.junsoft.org/firmware/demo.mp4
+      //  let url =  URL(fileURLWithPath: urlPath!)
+        let url =  URL(string:"http://www.junsoft.org/firmware/demo.mp4")
+     
+        player = AVPlayer(url: url!)
         playerLayer = AVPlayerLayer(player: player)
                   
         playerLayer?.frame = videoView.bounds

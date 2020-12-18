@@ -74,19 +74,26 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>Siren.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>ZIPFoundation.xcscheme</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
+		</dict>
+		<key>ZIPFoundation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>iOSDFULibrary.xcscheme</key>
 		<dict>

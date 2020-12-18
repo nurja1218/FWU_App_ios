@@ -58,8 +58,9 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     func downloadList()
     {
-        let url = "http://www.junsoft.org/firmware/firmwares.json"
-    
+     //   let url = "http://www.junsoft.org/firmware/firmwares.json"
+        let url = "https://palmcat.co.kr/sw/update.json"
+
         
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -73,6 +74,7 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
 
             case .success(let value):
                 let json = JSON(value)
+                /*
                 let items =  json["item"].arrayValue
                 for item in items{
                    let name =  item["name"].stringValue
@@ -83,6 +85,19 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
                     
                   
                 }
+                 */
+                let dict =  json["peroFU"].dictionaryValue
+                let items = dict["firmware"]!.arrayValue
+                for item in items{
+                   let name =  item["path"].stringValue
+                    print(name)
+                    let path = "https://palmcat.co.kr/sw/pero-fu/" + name
+                    let pathUrl = URL(string: path)
+                    self.firmwares.append(pathUrl!)
+                    
+                  
+                }
+       
                 collectionView.reloadData()
          
                // completion(true, json)
