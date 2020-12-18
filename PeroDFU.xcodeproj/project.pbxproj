@@ -19,7 +19,6 @@
 		1E8FDA14256C7E6F00682D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8FDA12256C7E6F00682D7F /* Main.storyboard */; };
 		1E8FDA16256C7E7400682D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8FDA15256C7E7400682D7F /* Assets.xcassets */; };
 		1E8FDA19256C7E7400682D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8FDA17256C7E7400682D7F /* LaunchScreen.storyboard */; };
-		1EACD300256D3DCC0095599E /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1EACD2FF256D3DCC0095599E /* demo.mp4 */; };
 		4BD6DC941D8A7C5AFF883461 /* Pods_PeroDFU_PeroDFUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DEC523660DF22A1F9E7776 /* Pods_PeroDFU_PeroDFUUITests.framework */; };
 		8A3EEE57217999E3F4534D46 /* Pods_PeroDFUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8539D8E8F0BA5D1757BD377E /* Pods_PeroDFUTests.framework */; };
 		D5CA8BC7093B8E0EE23D0FB1 /* Pods_PeroDFU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7FE591EC3FD32059676ED4 /* Pods_PeroDFU.framework */; };
@@ -62,7 +61,6 @@
 		1E8FDA1A256C7E7400682D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E8FDA1F256C7E7400682D7F /* PeroDFUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeroDFUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8FDA2A256C7E7400682D7F /* PeroDFUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeroDFUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EACD2FF256D3DCC0095599E /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
 		2CE5A2C4DECF174DDFA45859 /* Pods-PeroDFUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeroDFUTests.debug.xcconfig"; path = "Target Support Files/Pods-PeroDFUTests/Pods-PeroDFUTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8242C4E9FB06A804FA17A115 /* Pods-PeroDFU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeroDFU.release.xcconfig"; path = "Target Support Files/Pods-PeroDFU/Pods-PeroDFU.release.xcconfig"; sourceTree = "<group>"; };
 		8539D8E8F0BA5D1757BD377E /* Pods_PeroDFUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeroDFUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				1E0C31AC256CAB70009FFEAB /* PeroDFU.entitlements */,
-				1EACD2FF256D3DCC0095599E /* demo.mp4 */,
 				1E8FDA0C256C7E6F00682D7F /* AppDelegate.swift */,
 				1E8FDA0E256C7E6F00682D7F /* SceneDelegate.swift */,
 				1E8FDA10256C7E6F00682D7F /* ViewController.swift */,
@@ -275,7 +272,6 @@
 			files = (
 				1E8FDA19256C7E7400682D7F /* LaunchScreen.storyboard in Resources */,
 				1E8FDA16256C7E7400682D7F /* Assets.xcassets in Resources */,
-				1EACD300256D3DCC0095599E /* demo.mp4 in Resources */,
 				1E8FDA14256C7E6F00682D7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

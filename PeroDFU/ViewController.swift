@@ -65,11 +65,11 @@ class ViewController: UIViewController {
 
       //  playerView.play(for: url)
    //     videoView.addSubview(playerView)
-        let urlPath = Bundle.main.path(forResource: "demo", ofType:  "mp4")
+      //  let urlPath = Bundle.main.path(forResource: "demo", ofType:  "mp4")
    
         //http://www.junsoft.org/firmware/demo.mp4
       //  let url =  URL(fileURLWithPath: urlPath!)
-        let url =  URL(string:"http://www.junsoft.org/firmware/demo.mp4")
+        let url =  URL(string:"https://palmcat.co.kr/sw/fumode-guide.mp4")
      
         player = AVPlayer(url: url!)
         playerLayer = AVPlayerLayer(player: player)
