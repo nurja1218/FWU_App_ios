@@ -225,7 +225,7 @@ class FirmwareViewController: UIViewController, UICollectionViewDataSource, UICo
            // let firmeware = DFUFirmware(urlToZipFile:  url)
          
             let name =  url.lastPathComponent
-            let urlStr = "http://www.junsoft.org/firmware/" + name
+            let urlStr = "https://palmcat.co.kr/sw/pero-fu/" + name
            
             downloadFirmware(filename: name, url: URL(string: urlStr)!)
        
